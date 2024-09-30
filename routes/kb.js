@@ -200,7 +200,7 @@ router.post('/qa', async (req, res) => {
       publicKey = true;
     }
     if (!gptkey) {
-      return res.status(403).send({ success: false, error: "GPT apikey undefined" })
+      return res.status(403).send({ success: false, error: "ChatRep apikey undefined" })
     }
     data.gptkey = gptkey;
   }
@@ -1191,7 +1191,7 @@ async function startScrape(data) {
   if (!data.gptkey) {
     let gptkey = process.env.GPTKEY;
     if (!gptkey) {
-      return { error: "GPT apikey undefined" }
+      return { error: "ChatRep apikey undefined" }
     }
     data.gptkey = gptkey;
   }
